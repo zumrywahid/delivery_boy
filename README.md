@@ -4,13 +4,26 @@ Flutter based Simple UI concept for a Delivery personal.
 
 Please add your Map API key in
 
-Folder/ios/Runner/AppDelegate.swift and add this with following
+Folder/ios/Runner/AppDelegate.swift
 
 
 ```
-function test() {
-  console.log("notice the blank line before this function?");
+import UIKit
+import Flutter
+import GoogleMaps
+
+@UIApplicationMain
+@objc class AppDelegate: FlutterAppDelegate {
+  override func application(
+    _ application: UIApplication,
+    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+  ) -> Bool {
+    GMSServices.provideAPIKey("YOUR API KEY")
+    GeneratedPluginRegistrant.register(with: self)
+    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+  }
 }
+
 ```
 
 
